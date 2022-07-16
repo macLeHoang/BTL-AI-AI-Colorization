@@ -1,16 +1,14 @@
 # AI COLORIZATION
 
 ## Some exmaples:
-![alt text](https://github.com/macLeHoang/BTL-AI-AI-Colorization/blob/main/examples/exResult.jpg?raw=true)
+![](https://github.com/macLeHoang/BTL-AI-AI-Colorization/blob/main/examples/exResult.jpg?raw=true)
 Left: Origin - Middle: Gray - Right: Colored
 
 ## Evaluation:
 ### AuC
 Test on COCO test 2017
 
-![git small](https://github.com/macLeHoang/BTL-AI-AI-Colorization/blob/main/examples/per_img.png)  ![git small](https://github.com/macLeHoang/BTL-AI-AI-Colorization/blob/main/examples/per_pixel.png)
-
-<img src="https://camo.githubusercontent.com/..." https://github.com/macLeHoang/BTL-AI-AI-Colorization/blob/main/examples/per_img.png" width="200" height="400" /> <img src="https://camo.githubusercontent.com/..." https://github.com/macLeHoang/BTL-AI-AI-Colorization/blob/main/examples/per_pixel.png" width="200" height="400" />
+<img src= "https://github.com/macLeHoang/BTL-AI-AI-Colorization/blob/main/examples/per_img.png" width="330" height="221" /><img src= "https://github.com/macLeHoang/BTL-AI-AI-Colorization/blob/main/examples/per_pixel.png" width="330" height="221" /> 
 
 ### Classfication task
 Test on ImageNet_V2 which label space is the same as ImageNet-1k
