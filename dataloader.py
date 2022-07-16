@@ -4,7 +4,7 @@ from PIL import Image
 from tqdm import tqdm
 import os
 import random
-from config
+import config
 
 import tensorflow as tf
 
