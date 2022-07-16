@@ -10,6 +10,8 @@ Test on COCO test 2017
 
 ![git small](https://github.com/macLeHoang/BTL-AI-AI-Colorization/blob/main/examples/per_img.png)  ![git small](https://github.com/macLeHoang/BTL-AI-AI-Colorization/blob/main/examples/per_pixel.png)
 
+<img src="https://camo.githubusercontent.com/..." https://github.com/macLeHoang/BTL-AI-AI-Colorization/blob/main/examples/per_img.png" width="200" height="400" /> <img src="https://camo.githubusercontent.com/..." https://github.com/macLeHoang/BTL-AI-AI-Colorization/blob/main/examples/per_pixel.png" width="200" height="400" />
+
 ### Classfication task
 Test on ImageNet_V2 which label space is the same as ImageNet-1k
 
