@@ -4,11 +4,15 @@ from PIL import Image
 from tqdm import tqdm
 import os
 import random
+from config
 
 import tensorflow as tf
 
-// Create a folder name 'DATA' and put all traning images there
-path = 'DATA'
+
+BATCH_SIZE = config.BATCH
+path = config.path_
+
+// this part is for removing gray images in training dataset
 c = 0
 for f in tqdm(os.listdir(path)):
   fPath = os.path.join(path, f)
@@ -23,7 +27,8 @@ print(f'Remain {len(os.listdir(path))} images')
 
 
 SIZE = (256, 256)
-dataset = tf.data.Dataset.list_files('DATA/*.jpg')
+path_ = path + '/*jpg'
+dataset = tf.data.Dataset.list_files(path_)
 
 def process(path):
   '''
@@ -70,4 +75,4 @@ def process(path):
          tf.convert_to_tensor(abChannels, dtype = tf.float32)
 
 dataset = dataset.map(lambda x: tf.py_function(process, [x], [tf.float32, tf.float32]))
-dataset = dataset.batch()
+dataset = dataset.batch(BATCH_SIZE)
