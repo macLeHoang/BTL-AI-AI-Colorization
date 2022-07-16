@@ -1,5 +1,5 @@
 import datetime
-import tqdm
+from tqdm import tqdm
 import tensorflow as tf
 
 from losses import generative_loss, discriminative_loss, pretrained_loss
