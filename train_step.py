@@ -3,7 +3,7 @@ import tqdm
 import tensorflow as tf
 
 from losses import generative_loss, discriminative_loss, pretrained_loss
-from dataloader import dataset
+import dataloader
 import config
 from models import GENERATOR, DISCRIMINATOR
 
@@ -18,6 +18,8 @@ pre_epochs = config.pretrained_epochs
 epochs = config.epochs
 
 log_ = config.logs
+
+dataset = dataloader.dataset
 
 # pre-train first
 if log_: 
