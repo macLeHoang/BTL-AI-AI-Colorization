@@ -17,6 +17,8 @@ discriminator = dModel()
 pre_epochs = config.pretrained_epochs
 epochs = config.epochs
 
+log_ = config.logs
+
 # pre-train first
 if log_: 
   log_dir = config.logs_path
@@ -50,8 +52,6 @@ def pre_fit(dataset, epochs):
    
   
 # GANs train
-log_ = config.logs
-
 if log_: 
   log_dir = config.logs_path
   summary_writer = tf.summary.create_file_writer(
