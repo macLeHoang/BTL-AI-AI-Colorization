@@ -11,7 +11,7 @@ Test on COCO test 2017
 <img src= "https://github.com/macLeHoang/BTL-AI-AI-Colorization/blob/main/examples/per_img.png" width="330" height="221" /><img src= "https://github.com/macLeHoang/BTL-AI-AI-Colorization/blob/main/examples/per_pixel.png" width="330" height="221" /> 
 
 ### Classfication task
-Test on ImageNet_V2 which label space is the same as ImageNet-1k
+Test on ImageNet_V2 which label space is the same as ImageNet-1k. Using VGG19  as classification model
 
 Type | Top 1 - accuracy
 --- | --- |
