@@ -12,7 +12,7 @@ import tensorflow as tf
 BATCH_SIZE = config.BATCH
 path = config.path_
 
-// this part is for removing gray images in training dataset
+# this part is for removing gray images in training dataset
 c = 0
 for f in tqdm(os.listdir(path)):
   fPath = os.path.join(path, f)
