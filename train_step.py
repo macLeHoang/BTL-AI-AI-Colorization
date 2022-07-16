@@ -7,7 +7,7 @@ from dataloader import dataset
 import config
 from models import GENERATOR, DISCRIMINATOR
 
-// Initialize models
+# Initialize models
 gModel = GENERATOR()
 generator = gModel()
 
@@ -17,7 +17,7 @@ discriminator = dModel()
 pre_epochs = config.pretrained_epochs
 epochs = config.epochs
 
-// pre-train first
+# pre-train first
 if log_: 
   log_dir = config.logs_path
   summary_writer = tf.summary.create_file_writer(
@@ -49,7 +49,7 @@ def pre_fit(dataset, epochs):
     generator.save_weights(os.path.join(gen_ckpt_dir, gen_ckpt_name))
    
   
-// GANs train
+# GANs train
 log_ = config.logs
 
 if log_: 
