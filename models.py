@@ -60,6 +60,7 @@ class GENERATOR(tf.keras.models.Model):
     return tf.keras.models.Model(inputs = resnet18.input, outputs = x)
 
 # DISCRIMINATOR
+initializer = tf.random_normal_initializer(0.0, 0.02)
 def down_sample(input, nums_filters, kernel_size = (4, 4), strides = 2, use_batchnorm = True, **kwags):
   x = input
   x = tf.keras.layers.Conv2D(nums_filters, 
