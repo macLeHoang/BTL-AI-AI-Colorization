@@ -5,12 +5,24 @@ import tensorflow as tf
 from losses import generative_loss, discriminative_loss, pretrained_loss
 from dataloader import dataset
 import config
+from models import GENERATOR, DISCRIMINATOR
 
+// Initialize models
+gModel = GENERATOR()
+generator = gModel()
+
+dModel = DISCRIMINATOR()
+discriminator = dModel()
 
 pre_epochs = config.pretrained_epochs
 epochs = config.epochs
 
 // pre-train first
+if log_: 
+  log_dir = config.logs_path
+  summary_writer = tf.summary.create_file_writer(
+    log_dir + datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
+
 pretrain_opt = tf.keras.optimizers.Adam(1e-4)
 
 @tf.function
