@@ -1,5 +1,6 @@
 import datetime
 from tqdm import tqdm
+import os
 import tensorflow as tf
 
 from losses import generative_loss, discriminative_loss, pretrained_loss
@@ -40,8 +41,9 @@ def pre_step(L_target, ab_target, step):
   pretrain_opt.apply_gradients(zip(grads,
                                    generator.trainable_variables))
   
-  with summary_writer.as_default():
-    tf.summary.scalar('L1_pretrained_Loss', l1, step = step//10)
+  if log_:
+    with summary_writer.as_default():
+      tf.summary.scalar('L1_pretrained_Loss', l1, step = step//10)
     
 def pre_fit(dataset, epochs):
   for epoch in range(epochs):
@@ -84,12 +86,14 @@ def train_step(Limg, ab_target, step):
                            generator.trainable_variables))
   dOpt.apply_gradients(zip(dGradients,
                            discriminator.trainable_variables))
-  with summary_writer.as_default():
-    tf.summary.scalar('Total Gen loss', g_loss, step = step//10)
-    tf.summary.scalar('Gan loss', g_gan_loss, step = step//10)
-    tf.summary.scalar('Total Disc loss', d_loss, step = step//10)
-    # tf.summary.scalar('Positive Disc loss', pos_d_loss, step = step//10)
-    # tf.summary.scalar('Negative Disc loss', neg_d_loss, step = step//10)
+  
+  if log_:
+    with summary_writer.as_default():
+      tf.summary.scalar('Total Gen loss', g_loss, step = step//10)
+      tf.summary.scalar('Gan loss', g_gan_loss, step = step//10)
+      tf.summary.scalar('Total Disc loss', d_loss, step = step//10)
+      # tf.summary.scalar('Positive Disc loss', pos_d_loss, step = step//10)
+      # tf.summary.scalar('Negative Disc loss', neg_d_loss, step = step//10)
 
 def fit(dataset, epochs):
   for epoch in range(epochs):
