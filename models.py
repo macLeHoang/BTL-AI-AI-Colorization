@@ -23,13 +23,14 @@ def decoder(input_, concat, nfilters = 1024, ksize = (1, 1), strides = 1):
   return x
 
 class GENERATOR(tf.keras.models.Model):
-  def __init__(self):
+  def __init__(self, _use_imagenet_weight = True):
     super().__init__()
     self.ResNet18, _ = Classifiers.get('resnet18')
+    self.use_imagenet_weight = _use_imagenet_weight
   
   def __call__(self):
     resnet18 = self.ResNet18(input_shape = (256, 256, 3), 
-                             weights = 'imagenet',
+                             weights = 'imagenet' if self.use_imagenet_weight else None,
                              include_top = False)
   
     encoder_1 = resnet18.get_layer('bn0').output # encode 128 - shape = (None, 128, 128, 64)
