@@ -1,5 +1,9 @@
 # AI COLORIZATION
 
+## Weights:
+- Pre-trained weights in 20 epochs: [link](https://drive.google.com/drive/u/0/folders/1ta_xpQ0l4mKbwxMrerxp216NLDGowbjw)
+- GAN train on 71 epochs: [link](https://drive.google.com/drive/u/0/folders/1ta_xpQ0l4mKbwxMrerxp216NLDGowbjw)
+
 ## Some exmaples:
 ![](https://github.com/macLeHoang/BTL-AI-AI-Colorization/blob/main/examples/exResult.jpg?raw=true)
 Left: Origin - Middle: Gray - Right: Colored
