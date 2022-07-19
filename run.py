@@ -23,7 +23,7 @@ def colored():
   SIZE = args.size
   w = int(SIZE[0] / 32) * 32
   h = int(SIZE[1] / 32) * 32
-  img = Image.open(args.img_path).resize((w, h)).convert(L)
+  img = Image.open(args.img_path).resize((w, h)).convert('L')
   
   img = np.array(img)[..., np.newaxis] / 255. * 2 - 1
   img_ = np.repeat(img, 3, axis = -1)[np.newaxis, ...] 
