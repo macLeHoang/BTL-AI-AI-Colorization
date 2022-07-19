@@ -1,6 +1,7 @@
 import argparse
 from PIL import Image
 import numpy as np
+import os
 from skimage.color import lab2rgb
 
 import config
@@ -12,6 +13,7 @@ parser.add_argument('-w', '--weight_path', type = str, help = 'Path to weights f
 parser.add_argument('-i', '--img_path', type = str, help = 'Path to image', required=True, metavar='')
 parser.add_argument('-s', '--size', type = tuple, help = 'Output image size - (Width, Height)', default = (256, 256), metavar='')
 parser.add_argument('-st', '--store', type = str, help = 'Store path', default = None, metavar = '')
+# parser.add_argument('-k', '--keep_dim', action = 'store_true', help = '')
 args = parser.parse_args()
 
 
@@ -34,8 +36,10 @@ def colored():
   lab = np.concatenate([img, ab[0].numpy()], axis = -1)
   rgb = lab2rgb(lab)
   
-  name_ = args.img_path.split()
-  rgb = Image.fromarray(np.uint8(rgb*255)).save('a.jpg')
+  name_ = os.path.split(args.img_path)[-1]
+  store_ = name_.split('.')[0] + '_gen.jpg' + 
+  
+  rgb = Image.fromarray(np.uint8(rgb*255)).save(store_)
 
 def main():
   if args.weight_path is None:
@@ -46,8 +50,10 @@ def main():
       model_.load_weights(default_weight_)
   else:
     model_.load_weights(args.weight_path)
-  
   colored()
+  
+if __name__ == '__main__':
+  main()
   
 
 
