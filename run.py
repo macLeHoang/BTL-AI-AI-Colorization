@@ -11,7 +11,7 @@ parser = argparse.ArgumentParser(description='Configuration')
 parser.add_argument('-w', '--weight_path', type = str, help = 'Path to weights file', default = None, metavar='')
 parser.add_argument('-i', '--img_path', type = str, help = 'Path to image', required=True, metavar='')
 parser.add_argument('-s', '--size', type = tuple, help = 'Output image size - (Width, Height)', default = (256, 256), metavar='')
-parser.add_argument('-st', '--store', type = str, help = 'Store path', required=True, metavar = '')
+parser.add_argument('-st', '--store', type = str, help = 'Store path', default = None, metavar = '')
 args = parser.parse_args()
 
 
@@ -33,6 +33,9 @@ def colored():
   ab = ab*110
   lab = np.concatenate([img, ab[0].numpy()], axis = -1)
   rgb = lab2rgb(lab)
+  
+  name_ = args.img_path.split()
+  rgb = Image.fromarray(np.uint8(rgb*255)).save('a.jpg')
 
 def main():
   if args.weight_path is None:
