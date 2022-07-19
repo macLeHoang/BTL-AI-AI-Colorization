@@ -14,7 +14,7 @@ logs_path = '' # Ignore this if logs is False
 ############ FOR TEST ##############
 # ignore the above configs if use test only
 
-weight_ = ''   # path to weight files
+weight_ = None   # path to weight files
                # E.g: file data: generator-20220630-104911.data-00000-of-00001
                #      file index: generator-20220630-104911.index
                # path to load is: .../generator-20220630-104911
