@@ -37,7 +37,7 @@ def colored():
   rgb = lab2rgb(lab)
   
   name_ = os.path.split(args.img_path)[-1]
-  store_ = name_.split('.')[0] + '_gen.jpg' + 
+  store_ = name_.split('.')[0] + '_gen.jpg'
   
   rgb = Image.fromarray(np.uint8(rgb*255)).save(store_)
 
