@@ -1,4 +1,26 @@
 # AI COLORIZATION
+## Run Example
+```bash
+git clone https://github.com/macLeHoang/BTL_AI-Colorization
+cd BTL_AI-Colorization
+
+python run.py \
+-k \
+-w [your path to weight file] \
+-i [your path to image]
+-st [path to store gen_img - you can delete this line]
+```
+or this for specified dims
+```
+git clone https://github.com/macLeHoang/BTL_AI-Colorization
+cd BTL_AI-Colorization
+
+python BTL_AI-Colorization/run.py \
+-s ([w], [h])
+-w [your path to weight file] \
+-i [your path to image]
+-st [path to store gen_img - you can delete this line]
+```
 
 ## Weights:
 - Pre-trained weights in 20 epochs: [link](https://drive.google.com/drive/u/0/folders/1ta_xpQ0l4mKbwxMrerxp216NLDGowbjw)
