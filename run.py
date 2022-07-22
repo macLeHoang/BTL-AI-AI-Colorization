@@ -13,7 +13,7 @@ parser.add_argument('-w', '--weight_path', type = str, help = 'Path to weights f
 parser.add_argument('-i', '--img_path', type = str, help = 'Path to image', required=True, metavar='')
 parser.add_argument('-s', '--size', type = tuple, help = 'Output image size - (Width, Height)', default = (256, 256), metavar='')
 parser.add_argument('-st', '--store', type = str, help = 'Store path', default = None, metavar = '')
-# parser.add_argument('-k', '--keep_dim', action = 'store_true', help = '')
+parser.add_argument('-k', '--keep_dims', action = 'store_true', help = '')
 args = parser.parse_args()
 
 
@@ -22,11 +22,17 @@ model_ = gen()
 default_weight_ = config.weight_
 
 def colored():
-  SIZE = args.size
-  w = int(SIZE[0] / 32) * 32
-  h = int(SIZE[1] / 32) * 32
-  img = Image.open(args.img_path).resize((w, h)).convert('L')
+  img = Image.open(args.img_path)
+  w, h = img.size
+  if args.keep_dims:
+    w = int(w / 32) * 32
+    h = int(h / 32) * 32
+  else:
+    SIZE = args.size
+    w = int(SIZE[0] / 32) * 32
+    h = int(SIZE[1] / 32) * 32
   
+  img = img.resize((w, h)).convert('L')
   img = np.array(img)[..., np.newaxis] / 255. * 2 - 1
   img_ = np.repeat(img, 3, axis = -1)[np.newaxis, ...] 
   ab = model_(img_, training = False)
@@ -54,6 +60,3 @@ def main():
   
 if __name__ == '__main__':
   main()
-  
-
-
