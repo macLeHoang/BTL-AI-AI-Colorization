@@ -1,4 +1,13 @@
 # AI COLORIZATION
+## Weights:
+- Pre-trained weights in 20 epochs: [link](https://drive.google.com/drive/u/0/folders/1ta_xpQ0l4mKbwxMrerxp216NLDGowbjw)
+- GAN train on 71 epochs: [link](https://drive.google.com/drive/u/0/folders/1ta_xpQ0l4mKbwxMrerxp216NLDGowbjw)
+
+## Some exmaples:
+![](https://github.com/macLeHoang/BTL-AI-AI-Colorization/blob/main/examples/exResult.jpg?raw=true)
+Left: Origin - Middle: Gray - Right: Colored
+
+
 ## Run Example
 ```bash
 git clone https://github.com/macLeHoang/BTL_AI-Colorization
@@ -21,14 +30,6 @@ python BTL_AI-Colorization/run.py \
 -i [your path to image]
 -st [path to store gen_img - you can delete this line]
 ```
-
-## Weights:
-- Pre-trained weights in 20 epochs: [link](https://drive.google.com/drive/u/0/folders/1ta_xpQ0l4mKbwxMrerxp216NLDGowbjw)
-- GAN train on 71 epochs: [link](https://drive.google.com/drive/u/0/folders/1ta_xpQ0l4mKbwxMrerxp216NLDGowbjw)
-
-## Some exmaples:
-![](https://github.com/macLeHoang/BTL-AI-AI-Colorization/blob/main/examples/exResult.jpg?raw=true)
-Left: Origin - Middle: Gray - Right: Colored
 
 ## Evaluation:
 ### AuC
