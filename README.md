@@ -32,12 +32,13 @@ Left: Origin - Middle: Gray - Right: Colored
 
 ## Evaluation:
 ### AuC
-Test on COCO test 2017
+Calculate histogram cumulative of per pixel RMS error and of image RMS error on COCO test 2017
 
 <img src= "https://github.com/macLeHoang/BTL_AI-Colorization/blob/main/examples/per_img_75_0.01.png" width="330" height="221" /><img src= "https://github.com/macLeHoang/BTL_AI-Colorization/blob/main/examples/per_pixel_75_0.01.png" width="330" height="221" /> 
 
 ### Classfication task
-Test on ImageNet_V2 which label space is the same as ImageNet-1k. Using VGG19  as classification model
+Do classification task on ImageNet_V2 which label space is the same as ImageNet-1k. Using VGG19 as classification model. 
+First do task on origin image, then wash out all color and finally on re-colored. 
 
 Type | Top 1 - accuracy
 --- | --- |
