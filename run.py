@@ -17,7 +17,7 @@ parser.add_argument('-k', '--keep_dims', action = 'store_true', help = '')
 args = parser.parse_args()
 
 
-gen = GENERATOR(False)
+gen = GENERATOR(False, False)
 model_ = gen()
 default_weight_ = config.weight_
 
