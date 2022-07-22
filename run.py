@@ -44,6 +44,10 @@ def colored():
   
   name_ = os.path.split(args.img_path)[-1]
   store_ = name_.split('.')[0] + '_gen.jpg'
+  if args.store is not None:
+    store_ = os.path.join(args.store, store_)
+  else:
+    store_ = os.path.join(os.path.split(args.img_path)[:-1], store_)
   
   rgb = Image.fromarray(np.uint8(rgb*255)).save(store_)
 
