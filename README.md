@@ -12,23 +12,13 @@ Left: Origin - Middle: Gray - Right: Colored
 ```bash
 git clone https://github.com/macLeHoang/BTL_AI-Colorization
 cd BTL_AI-Colorization
-
-python run.py \
--k \
--w [your path to weight file] \
--i [your path to image]
--st [path to store gen_img - you can delete this line]
+python run.py -k -w [your path to weight file] -i [your path to image] -st [path to store gen_img - you can delete this line]
 ```
 or this for specified dims
 ```
 git clone https://github.com/macLeHoang/BTL_AI-Colorization
 cd BTL_AI-Colorization
-
-python BTL_AI-Colorization/run.py \
--s ([w], [h])
--w [your path to weight file] \
--i [your path to image]
--st [path to store gen_img - you can delete this line]
+python BTL_AI-Colorization/run.py -s ([w], [h]) -w [your path to weight file] -i [your path to image] -st [path to store gen_img - you can delete this line]
 ```
 
 ## Evaluation:
